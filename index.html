@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body class="theme-enchanted min-h-screen relative overflow-x-hidden transition-all duration-1000">
+    <!-- Background Animations Container -->
+    <div id="backgroundAnimations" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+        <div class="flex gap-2">
+            <button onclick="todoApp.setTheme('enchanted')" class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-200 to-purple-200 border-2 border-white shadow-lg hover:scale-110 transition-all" title="Enchanted Theme">
+                🦋
+            </button>
+            <button onclick="todoApp.setTheme('urban')" class="w-12 h-12 rounded-full bg-gradient-to-br from-gray-800 to-green-500 border-2 border-white shadow-lg hover:scale-110 transition-all" title="Urban Style Theme">
+                🕶️
+            </button>
+        </div>
+    </div>
+    
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal" style="display: none;">
+        <div class="classic-card rounded-2xl p-8 max-w-md mx-4">
+            <h2 class="heading-font text-2xl font-bold text-gray-800 mb-4 text-center">Welcome to To-Do List!</h2>
+            <p class="text-gray-600 mb-6 text-center">Let's personalize your experience. What's your name?</p>
+            <input type="text" id="nameInput" placeholder="Enter your name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none mb-4">
+            <button onclick="todoApp.saveName()" class="w-full classic-button py-3 px-6 rounded-lg font-medium">
+                Get Started
+            </button>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div id="notification" class="notification classic-card px-6 py-3 rounded-lg shadow-lg">
+        <span id="notificationText">Welcome!</span>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 max-w-4xl relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 id="greeting" class="heading-font text-5xl font-bold text-gray-800 mb-2">Classic To-Do List</h1>
+            <p class="text-gray-600 text-lg">Elegant task management with timeless style</p>
+        </div>
+
+        <!-- Add Task Form -->
+        <div class="classic-card rounded-2xl p-6 mb-8">
+            <form id="taskForm" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        placeholder="What needs to be accomplished?" 
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
+                        required
+                    >
+                    <input 
+                        type="datetime-local" 
+                        id="dueDateInput" 
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
+                    >
+                </div>
+                <button 
+                    type="submit" 
+                    class="w-full classic-button py-3 px-6 rounded-lg font-medium text-lg"
+                >
+                    Add Task
+                </button>
+            </form>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+            <button class="filter-btn active px-6 py-2 rounded-full border-2 border-amber-200 bg-amber-50 hover:bg-amber-100 transition-all font-medium" data-filter="all">
+                All Tasks
+            </button>
+            <button class="filter-btn px-6 py-2 rounded-full border-2 border-amber-200 bg-white hover:bg-amber-50 transition-all font-medium" data-filter="active">
+                Active
+            </button>
+            <button class="filter-btn px-6 py-2 rounded-full border-2 border-amber-200 bg-white hover:bg-amber-50 transition-all font-medium" data-filter="completed">
+                History
+            </button>
+        </div>
+
+        <!-- Task Counter -->
+        <div class="text-center mb-6">
+            <span id="taskCounter" class="text-lg font-medium text-gray-700">0 tasks remaining</span>
+        </div>
+
+        <!-- Tasks List -->
+        <div class="classic-card rounded-2xl overflow-hidden">
+            <div id="tasksList" class="divide-y divide-gray-100">
+                <!-- Tasks will be inserted here -->
+            </div>
+            <div id="emptyState" class="text-center py-16 text-gray-500">
+                <div class="text-6xl mb-4">📋</div>
+                <p class="text-xl heading-font">Your task list awaits</p>
+                <p class="text-gray-400 mt-2">Add a task above to begin your productive journey</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d74649555eafb0',t:'MTc1NDkxMDUwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
