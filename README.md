@@ -1,63 +1,42 @@
-✨ Aesthetic To-Do List ✨
+# ✨ Aesthetic To-Do List ✨
 
 An elegant, feature-rich task manager that combines timeless style with modern functionality. Stay organized with a beautiful, intuitive interface and personalize it to match your vibe.
 
-
 ---
 
-🌟 Features
+## 🌟 Features
 
-Personalized Greeting
+### Personalized Greeting
 Welcomes you by name for a warm, friendly touch.
 
-Two Stunning Themes
+### Two Stunning Themes
+- **🦋 Enchanted** – Light, magical theme with animated butterflies, sparkles, and tulips.  
+- **🕶 Urban Style** – Sleek dark theme with stylish animated icons like sunglasses and watches.
 
-🦋 Enchanted – Light, magical theme with animated butterflies, sparkles, and tulips.
-
-🕶 Urban Style – Sleek dark theme with stylish animated icons like sunglasses and watches.
-
-
-Smart Task Management
-
-📅 Due Dates & Reminders – Set deadlines and get browser notifications.
-
-😀 Automatic Emojis – Adds relevant emojis based on keywords.
-
-🔍 Task Filtering – View All, Active, or History tasks.
-
-💾 Data Persistence – Saves your name, theme, and tasks in local storage.
-
-📱 Responsive Design – Works great on desktop and mobile.
-
-
+### Smart Task Management
+- **📅 Due Dates & Reminders** – Set deadlines and get browser notifications.  
+- **😀 Automatic Emojis** – Adds relevant emojis based on keywords.  
+- **🔍 Task Filtering** – View All, Active, or History tasks.  
+- **💾 Data Persistence** – Saves your name, theme, and tasks in local storage.  
+- **📱 Responsive Design** – Works great on desktop and mobile.
 
 ---
 
-🎨 Themes
+## 🎨 Themes
 
-Enchanted	Urban Style
-
-Light, airy, and magical with sparkles & butterflies.	Sleek, modern dark mode with vibrant accents.
-<img src="image_2830fe.png" alt="Enchanted Theme Screenshot" width="400">	<img src="image_283138.jpg" alt="Urban Style Theme Screenshot" width="400">
-
-
+| Enchanted | Urban Style |
+|-----------|-------------|
+| Light, airy, and magical with sparkles & butterflies. | Sleek, modern dark mode with vibrant accents. |
 
 ---
 
-🛠 Built With
-
-HTML5 – Structure
-
-Tailwind CSS – Styling
-
-Vanilla JavaScript – Functionality
-
-Google Fonts – Playfair Display & Lato
-
-
+## 🛠 Built With
+- **HTML5** – Structure  
+- **Tailwind CSS** – Styling  
+- **Vanilla JavaScript** – Functionality  
+- **Google Fonts** – Playfair Display & Lato
 
 ---
 
-📄 License
-
+## 📄 License
 Licensed under the MIT License – see LICENSE.md for details.
