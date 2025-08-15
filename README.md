@@ -1,4 +1,4 @@
-# ✨ Aesthetic To-Do List ✨
+# ✨ Classic To-Do List ✨
 
 An elegant, feature-rich task manager that combines timeless style with modern functionality. Stay organized with a beautiful, intuitive interface and personalize it to match your vibe.
 
